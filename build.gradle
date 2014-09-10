@@ -13,3 +13,9 @@ task upperCase << {
     println String.format("Original: %s", aString)
     println String.format("Upper case: %s", aString.toUpperCase())
 }
+
+task count << {
+    10.times {
+        println "$it"
+    }
+}
