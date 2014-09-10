@@ -38,3 +38,10 @@ task count << {
         println "I'm the task number ${n}"
     }
 }
+
+
+["Foo", "Bar", "Baz"].eachWithIndex { name, i ->
+    task "taskNamed${name}" << {
+        println "You just called the task taskNamed${name}"
+    }
+}
