@@ -1,4 +1,10 @@
-task hello {
+task intro {
+    doLast {
+        println 'Gradle buidl just started...'
+    }
+}
+
+task hello(dependsOn: intro) {
     doLast {
         println 'Hello, world!'
     }
@@ -19,3 +25,4 @@ task count << {
         println "$it"
     }
 }
+
