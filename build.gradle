@@ -7,3 +7,9 @@ task hello {
 task shortHello << {
     println 'Hello, world!'
 }
+
+task upperCase << {
+    String aString = 'lowercase'
+    println String.format("Original: %s", aString)
+    println String.format("Upper case: %s", aString.toUpperCase())
+}
