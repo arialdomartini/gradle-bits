@@ -1,12 +1,19 @@
+
+task hello(dependsOn: ['intro','secondIntro']) {
+    doLast {
+        println 'Hello, world!'
+    }
+}
+
 task intro {
     doLast {
         println 'Gradle buidl just started...'
     }
 }
 
-task hello(dependsOn: intro) {
+task secondIntro {
     doLast {
-        println 'Hello, world!'
+        println "Let's perform the other tasks"
     }
 }
 
