@@ -47,3 +47,18 @@ task count << {
 }
 
 taskNamedFoo.dependsOn(intro)
+
+
+task metaprogramming  {
+    doFirst {
+        println "one"
+    }
+}
+
+metaprogramming << {
+    println "two"
+}
+
+metaprogramming << {
+    println "three"
+}
