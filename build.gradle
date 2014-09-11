@@ -45,3 +45,5 @@ task count << {
         println "You just called the task taskNamed${name}"
     }
 }
+
+taskNamedFoo.dependsOn(intro)
