@@ -64,10 +64,19 @@ metaprogramming << {
 }
 
 
+/*
 task withProperties << {
     println "Property foo = ${ext.foo}"
 }
 
 setValue = { ext.foo = "some value" }
 withProperties.doFirst(setValue)
+*/
 
+
+task listFilesHere {
+    def files = file('.').listFiles().sort()
+    files.each( { File file ->
+        println file.absolutePath
+    })
+}
