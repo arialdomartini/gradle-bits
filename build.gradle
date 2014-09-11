@@ -62,3 +62,12 @@ metaprogramming << {
 metaprogramming << {
     println "three"
 }
+
+
+task withProperties << {
+    println "Property foo = ${ext.foo}"
+}
+
+setValue = { ext.foo = "some value" }
+withProperties.doFirst(setValue)
+
