@@ -76,7 +76,11 @@ withProperties.doFirst(setValue)
 
 task listFilesHere {
     def files = file('.').listFiles().sort()
-    files.each( { File file ->
+    printList(files)
+}
+
+private File[] printList(File[] files) {
+    files.each({ File file ->
         println file.absolutePath
     })
 }
