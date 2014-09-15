@@ -84,3 +84,20 @@ private File[] printList(File[] files) {
         println file.absolutePath
     })
 }
+
+
+task build_dev << {
+    println "Building version  $version"
+}
+
+task build_release(dependsOn: 'build_dev') << {
+    println 'Building release version'
+}
+
+gradle.taskGraph.whenReady {taskGraph ->
+    if (taskGraph.hasTask(build_release)) {
+        version = '1.0-PROD'
+    } else {
+        version = '1.0-DEV'
+    }
+}
